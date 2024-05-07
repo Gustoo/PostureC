@@ -16,6 +16,7 @@ def show():
             )
     st.info("More features are in development!")
     placeholder = st.empty()
+    img_file_buffer = st.camera_input("Take a picture")
 
 
 
