@@ -280,7 +280,7 @@ def main():
             #cv2.waitKey(10)
             placeholder.empty()
             placeholder.image(imgall, caption='If the right display is black, please adjust your camera')
-            time.sleep(0.1)
+            time.sleep(0.5)
 
 
 def task_pose_check1(checkpoint1y, checkpoint2y, holdpointy,checkpoint3x,checkpoint4x):
