@@ -116,7 +116,7 @@ def main():
     global i,totaltime,imgall,cv2_img
     global placeholder
     #cap = cv2.VideoCapture(1)
-    cap = cv2_img
+    #cap = cv2_img
     #cap = cv2.VideoCapture("1.mp4")
     rand = 20
     pTime = 0
@@ -135,7 +135,8 @@ def main():
     imgover = cv2.imread("over.jpg")
     while True:
         try:
-            success, img = cap.read()
+            #success, img = cap.read()
+            img = cv2_img
             if(task1_count !=rand):
                 _, img1 = task1.cap.read()
                 task1.video_loop()
