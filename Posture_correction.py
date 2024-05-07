@@ -275,7 +275,7 @@ def main():
             imgblack = np.zeros((480, 640, 3), dtype=np.uint8)
             #imgwhite = 255 * img
             imgall = np.hstack((imgex, imgblack))
-            cv2.imshow("Image", imgall)
+            #cv2.imshow("Image", imgall)
             imgall = cv2.cvtColor(imgall, cv2.COLOR_BGR2RGB)
             #cv2.waitKey(10)
             placeholder.empty()
