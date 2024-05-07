@@ -112,7 +112,7 @@ def main():
     global i,totaltime,imgall
     global placeholder
     cap = cv2.VideoCapture(1)
-    cap = cv2.VideoCapture("1.mp4")
+    #cap = cv2.VideoCapture("1.mp4")
     rand = 20
     pTime = 0
     imgex = 0
