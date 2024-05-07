@@ -8,6 +8,7 @@ import numpy as np
 import streamlit as st
 
 def show():
+    global cv2_img
 
     st.title('Posture correction tools')
     st.write("""By Victor&Gusto""")
@@ -16,9 +17,11 @@ def show():
             )
     st.info("More features are in development!")
     placeholder = st.empty()
-    img_file_buffer = st.camera_input("Take a picture")
-
-
+    img_file_buffer = st.camera_input()
+    if img_file_buffer is not None:
+    # To read image file buffer with OpenCV:
+        bytes_data = img_file_buffer.getvalue()
+        cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
 
 
 class poseDetector():
@@ -110,9 +113,10 @@ class Task():
 
 
 def main():
-    global i,totaltime,imgall
+    global i,totaltime,imgall,cv2_img
     global placeholder
-    cap = cv2.VideoCapture(1)
+    #cap = cv2.VideoCapture(1)
+    cap = cv2_img
     #cap = cv2.VideoCapture("1.mp4")
     rand = 20
     pTime = 0
@@ -415,6 +419,7 @@ if __name__ == "__main__":
     i = 0
     totaltime =0
     imgall =0
+    cv2_img =0
     #
     show()
     placeholder = st.empty()
