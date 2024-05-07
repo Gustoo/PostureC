@@ -17,11 +17,11 @@ def show():
             )
     st.info("More features are in development!")
     placeholder = st.empty()
-    img_file_buffer = st.camera_input("A")
-    if img_file_buffer is not None:
+    #img_file_buffer = st.camera_input("A")
+    #if img_file_buffer is not None:
     # To read image file buffer with OpenCV:
-        bytes_data = img_file_buffer.getvalue()
-        cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+       # bytes_data = img_file_buffer.getvalue()
+        #cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
 
 
 class poseDetector():
@@ -115,7 +115,7 @@ class Task():
 def main():
     global i,totaltime,imgall,cv2_img
     global placeholder
-    #cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(1)
     #cap = cv2_img
     #cap = cv2.VideoCapture("1.mp4")
     rand = 20
@@ -135,8 +135,8 @@ def main():
     imgover = cv2.imread("over.jpg")
     while True:
         try:
-            #success, img = cap.read()
-            img = cv2_img
+            success, img = cap.read()
+            #img = cv2_img
             if(task1_count !=rand):
                 _, img1 = task1.cap.read()
                 task1.video_loop()
